@@ -8,7 +8,7 @@ public class Book {
     private String author;
     private Integer saleCount;
     private Integer bookCount;
-    private Integer bookStatus = 0;
+    private Integer bookStatus = 0;         //0 表示正常，-1 表示下架或删除
     public Book() {
     }
 

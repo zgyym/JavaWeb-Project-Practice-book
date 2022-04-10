@@ -14,15 +14,21 @@
 <beans>
     <!-- DAO -->
     <bean id="userDAO" class="com.book.dao.impl.UserDAOImpl"/>
-
+    <bean id="bookDAO" class="com.book.dao.impl.BookDAOImpl"/>
     <!-- service -->
     <bean id="userService" class="com.book.service.impl.UserServiceImpl">
         <property name="userDAO" ref="userDAO"/>
+    </bean>
+    <bean id="bookService" class="com.book.service.impl.BookServiceImpl">
+        <property name="bookDAO" ref="bookDAO"/>
     </bean>
 
     <!-- controller -->
     <bean id="user" class="com.book.controller.UserController">
         <property name="userService" ref="userService"/>
+    </bean>
+    <bean id="book" class="com.book.controller.BookController">
+        <property name="bookService" ref="bookService"/>
     </bean>
 
 
