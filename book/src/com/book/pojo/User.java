@@ -7,6 +7,8 @@ public class User {
     private String email;
     private Integer role;
 
+    private Cart cart;
+
     public User() {
     }
 
@@ -52,5 +54,13 @@ public class User {
 
     public void setRole(Integer role) {
         this.role = role;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 }
