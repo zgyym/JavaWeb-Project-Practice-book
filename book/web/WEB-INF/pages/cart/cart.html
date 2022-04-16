@@ -49,13 +49,13 @@
               </td>
               <td th:text="${cartItem.book.bookName}">活着</td>
               <td>
-                <span class="count" th:onclick="|editCart(${cartItem.id} , ${cartItem.buyCount-1})|">-</span>
+                <input type="button" value="-" class="count" th:onclick="|editCart(${cartItem.id} , ${cartItem.buyCount-1})|" th:disabled="${cartItem.buyCount==1}"/>
                 <input class="count-num" type="text" value="1" th:value="${cartItem.buyCount}"/>
-                <span class="count" th:onclick="|editCart(${cartItem.id} , ${cartItem.buyCount+1})|">+</span>
+                <input type="button" value="+" class="count" th:onclick="|editCart(${cartItem.id} , ${cartItem.buyCount+1})|"/>
               </td>
               <td th:text="${cartItem.book.price}">36.8</td>
-              <td th:text="${cartItem.book.price * cartItem.buyCount}">36.8</td>
-              <td><a href="">删除123</a></td>
+              <td th:text="${cartItem.xj}">36.8</td>
+              <td><a href="">删除</a></td>
             </tr>
           </tbody>
         </table>

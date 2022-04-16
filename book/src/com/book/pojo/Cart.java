@@ -1,5 +1,6 @@
 package com.book.pojo;
 
+import java.math.BigDecimal;
 import java.util.Map;
 import java.util.Set;
 
@@ -26,7 +27,11 @@ public class Cart {
             Set<Map.Entry<Integer, CartItem>> entrySet = cartItemMap.entrySet();
             for(Map.Entry<Integer, CartItem> cartItemEntry : entrySet){
                 CartItem cartItem = cartItemEntry.getValue();
-                totalMoney =totalMoney + cartItem.getBook().getPrice() * cartItem.getBuyCount();
+                BigDecimal bigDecimalPrice = new BigDecimal("" + cartItem.getBook().getPrice());
+                BigDecimal bigDecimalBuyCount = new BigDecimal("" + cartItem.getBuyCount());
+                BigDecimal bigDecimalTotalMoney = bigDecimalPrice.multiply(bigDecimalBuyCount);
+                Double temp = bigDecimalTotalMoney.doubleValue();
+                totalMoney =totalMoney + temp;
             }
         }
         return totalMoney;

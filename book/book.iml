@@ -22,5 +22,6 @@
     <orderEntry type="library" name="lib-mysql" level="project" />
     <orderEntry type="library" name="lib-thymeleaf" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.59" level="application_server_libraries" />
+    <orderEntry type="library" name="lib-kaptcha" level="project" />
   </component>
 </module>
