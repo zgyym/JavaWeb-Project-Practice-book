@@ -38,6 +38,16 @@
    localhost 将您重定向的次数过多。
    尝试清除 Cookie.
    ERR_TOO_MANY_REDIRECTS
+=============================================================================================
+ 1. 注册页面表单验证
+    1) <form>有一个事件 onsubmit ,
+        onsubmit="return false" , 那么表单点击提交按钮时不会提交
+        onsubmit="return true" ,  那么表单点击提交按钮时会提交
 
+    2) 获取文档中某一个节点的方式：
+        //DOM:Document
+        //var unameTxt = document.getElementById("unameTxt");
+        //BOM:Browser
+        //document.forms[0].uname
 
 
