@@ -68,4 +68,18 @@ public class UserController {
             }
         }
     }
+
+    public String ckUname(String uname){
+        User user = userService.getUser(uname);
+        if(user != null){
+            //表示用户名已被注册
+            return "json:{'uname':'1'}";
+            //return "ajax:1";
+        }else{
+            //表示用户名可以注册
+            return "json:{'uname':'0'}";
+            //return "ajax:0";
+        }
+
+    }
 }

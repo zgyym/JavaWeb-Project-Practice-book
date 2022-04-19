@@ -51,3 +51,15 @@
         //document.forms[0].uname
 
 
+  2. 原生的Ajax（了解）
+    第一步： 客户端发送异步请求；并绑定对结果处理的回调函数
+    1) <input type="text" name="uname" onblur="ckUname()"/>
+    2) 定义ckUname方法：
+       - 创建XMLHttpRequest对象
+       - XMLHttpRequest对象操作步骤：
+         - open(url,"GET",true)
+         - onreadyStateChange 设置回调
+         - send() 发送请求
+       - 在回调函数中需要判断XMLHttpRequest对象的状态:
+         readyState(0-4) , status(200)
+    第二步：服务器端做校验，然后将校验结果响应给客户端

@@ -62,7 +62,7 @@ function createXMLHttpRequest(){
         try{
             xmlHttpRequest = new ActiveXObject("Microsoft.XMLHTTP");
         }catch (e) {
-            xmlHttpRequest = new ActiveXObject("Msxml2.XMLHTTP")
+            xmlHttpRequest = new ActiveXObject("Msxml2.XMLHTTP");
         }
     }
 }
