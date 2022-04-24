@@ -59,6 +59,12 @@ public class CartItemServiceImpl implements CartItemService {
         }
         Cart cart = new Cart();
         cart.setCartItemMap(cartItemMap);
+        //调用Cart中的三个属性的get方法，目的是在此处计算这三个属性的值，否则这三个属性为null，
+        //导致的结果就是下一步的gson转化时，为null的属性会被忽略
+        cart.getTotalCount();
+        cart.getTotalMoney();
+        cart.getTotalBookCount();
+
         return cart;
     }
 
@@ -68,6 +74,8 @@ public class CartItemServiceImpl implements CartItemService {
         for(CartItem cartItem : cartItemList){
             Book book = bookService.getBookById(cartItem.getBook().getId());
             cartItem.setBook(book);
+            //此处需要调用getXj()，目的是执行getXj()内部的代码，让book的price乘以buyCount，从而计算出xj这个属性的值
+            cartItem.getXj();
         }
         return cartItemList;
     }
