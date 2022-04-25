@@ -29,6 +29,18 @@ window.onload=function(){
                 }).then(function (value) {
                     vue.getCart();
                 }).catch(function (reason) {  });
+            },
+            delCartItem:function(cartItemId){
+                axios({
+                    method:"POST",
+                    url:"cart.do",
+                    params:{
+                        operate:'delCartItem',
+                        cartItemId:cartItemId,
+                    }
+                }).then(function (value) {
+                    vue.getCart();
+                }).catch(function (reason) {  });
             }
         },
         mounted:function(){

@@ -16,4 +16,5 @@ public interface CartItemService {
     Cart getCart(User user);
     //获取指定用户的购物车项，包括Book的所有信息
     List<CartItem> getCartItemList(User user);
+    void delCartItem(Integer cartItemId);
 }

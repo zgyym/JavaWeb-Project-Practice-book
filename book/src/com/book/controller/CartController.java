@@ -43,4 +43,9 @@ public class CartController {
         String cartJsonStr = gson.toJson(cart);
         return "json:" + cartJsonStr;
     }
+
+    public String delCartItem(Integer cartItemId){
+        cartItemService.delCartItem(cartItemId);
+        return "";
+    }
 }

@@ -14,4 +14,5 @@ public interface CartItemDAO {
     List<CartItem> getCartItemList(User user);
     //删除指定购物车项
     void delCartItem(CartItem cartItem);
+    void delCartItem(Integer cartItemId);
 }
